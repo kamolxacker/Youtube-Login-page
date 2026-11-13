@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+html,
+body {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    background: #f9f9f9;
+}
+
+::selection {
+    background: #ff0000;
+    color: #fff;
+}
+
+.wrapper {
+    overflow: hidden;
+    max-width: 390px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #ebebeb;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.yt-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.yt-logo span {
+    font-size: 22px;
+    font-weight: 500;
+    color: #0f0f0f;
+    letter-spacing: -0.5px;
+}
+
+.wrapper .title-text {
+    display: flex;
+    width: 200%;
+}
+
+.wrapper .title {
+    width: 50%;
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    color: #0f0f0f;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .slide-controls {
+    position: relative;
+    display: flex;
+    height: 46px;
+    width: 100%;
+    overflow: hidden;
+    margin: 25px 0 10px 0;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 23px;
+}
+
+.slide-controls .slide {
+    height: 100%;
+    width: 100%;
+    color: #0f0f0f;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 44px;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.6s ease;
+}
+
+.slide-controls label.signup {
+    color: #0f0f0f;
+}
+
+.slide-controls .slider-tab {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 0;
+    z-index: 0;
+    border-radius: 23px;
+    background: #ff0000;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#signup:checked~.slider-tab {
+    left: 50%;
+}
+
+#signup:checked~label.signup {
+    color: #fff;
+    cursor: default;
+    user-select: none;
+}
+
+#signup:checked~label.login {
+    color: #0f0f0f;
+}
+
+#login:checked~label.signup {
+    color: #0f0f0f;
+}
+
+#login:checked~label.login {
+    color: #fff;
+    cursor: default;
+    user-select: none;
+}
+
+.wrapper .form-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.form-container .form-inner {
+    display: flex;
+    width: 200%;
+}
+
+.form-container .form-inner form {
+    width: 50%;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-inner form .field {
+    height: 46px;
+    width: 100%;
+    margin-top: 18px;
+}
+
+.form-inner form .field input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    color: #0f0f0f;
+}
+
+.form-inner form .field input:focus {
+    border-color: #065fd4;
+    border-width: 2px;
+}
+
+.form-inner form .field input::placeholder {
+    color: #606060;
+    transition: all 0.3s ease;
+}
+
+form .field input:focus::placeholder {
+    color: #065fd4;
+}
+
+.form-inner form .pass-link {
+    margin-top: 8px;
+}
+
+.form-inner form .signup-link {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.form-inner form .pass-link a,
+.form-inner form .signup-link a {
+    color: #065fd4;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.form-inner form .pass-link a:hover,
+.form-inner form .signup-link a:hover {
+    text-decoration: underline;
+}
+
+form .btn {
+    height: 46px;
+    width: 100%;
+    border-radius: 23px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 25px;
+}
+
+form .btn .btn-layer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    background: #cc0000;
+    border-radius: 23px;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+form .btn:hover .btn-layer {
+    opacity: 1;
+}
+
+form .btn input[type="submit"] {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    background: #ff0000;
+    border: none;
+    color: #fff;
+    padding-left: 0;
+    border-radius: 23px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-field input {
+    padding-right: 40px;
+}
+
+.toggle-eye {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.toggle-eye:hover {
+    opacity: 1;
+}
